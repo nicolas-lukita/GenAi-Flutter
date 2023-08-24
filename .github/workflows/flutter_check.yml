@@ -1,0 +1,61 @@
+name: flutter_check
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+    paths-ignore:
+      - '.idea/**'
+      - '.vscode/**'
+      - '.gitattributes'
+      - '.github/**.json'
+      - '.gitignore'
+      - '.metadata'
+      - '.gitmodules'
+      - '**.md'
+      - '**/*.txt'
+      - '**/*.png'
+      - '**/*.jpg'
+      - 'LICENSE'
+      - 'NOTICE'
+  pull_request:
+    branches:
+      - "main"
+    paths-ignore:
+      - '.idea/**'
+      - '.vscode/**'
+      - '.gitattributes'
+      - '.github/**.json'
+      - '.gitignore'
+      - '.gitmodules'
+      - '.metadata'
+      - '**.md'
+      - '**/*.txt'
+      - '**/*.png'
+      - '**/*.jpg'
+      - 'LICENSE'
+      - 'NOTICE'
+
+jobs:
+  flutter_analyze:
+    runs-on: macOS-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Flutter action
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.13.0'
+          channel: 'stable'  # or: 'dev' or 'beta'
+
+      - uses: futureware-tech/simulator-action@v2
+        with:
+          model: 'iPhone 14 Pro Max'
+
+      - name: Flutter analyze
+        run: |
+          flutter doctor -v
+          flutter pub get
+          flutter analyze
