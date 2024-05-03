@@ -1,16 +1,8 @@
 # gen_ai_frontend
 
-A new Flutter project.
+Mobile Frontend for genAI project
 
-## Getting Started
+# Demo
 
-This project is a starting point for a Flutter application.
+https://github.com/nicolas-lukita/GenAi-Flutter/assets/76612512/8c6afed9-9548-497b-91e0-d5c5c2a7bc52
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
